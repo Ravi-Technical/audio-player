@@ -1,0 +1,89 @@
+<html>
+<head>
+<title>Audio Player</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
+
+<style>
+
+.wraper-play img {width: 50px;cursor: pointer;height: 50px; margin: 2px 0px 0 5px;}
+
+.wraper { background: url(./0NP3Br.jpg);
+    height: 100%;display:flex;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;}
+	
+	.wraper::after {
+    position: absolute;
+    content: '';
+    background-color: #000;
+    opacity: 0.5;
+    height: 100%;
+    width: 100%;
+    top: 0;
+}
+
+ #pause { display:none;}
+ 
+.wraper-play {background: #fff;
+    padding: 1rem;
+    display: flex;
+    position: relative;
+    top: 0rem;
+    width: 50%;
+    height: 12%;
+    margin: auto;
+     
+    z-index: 99;
+    justify-content: center;
+    align-items: center;}
+	
+.progress-wraper {background: #ccc;width: 600px;height: 4px;}
+
+.activeTimmer {width: 0;background: #000;height: 4px;}
+
+.progress-details { position: relative;left: 1.8rem;top: 5px;}
+
+span.loop { border: 2px solid #ddd; border-radius: 25px; font-size: 13px;font-weight: 500;cursor: pointer;margin: 0 0px 0 10px;height: 24px;width: 50px;
+    display: inline-block;text-align: center;}
+	
+i.fa.fa-repeat { margin-left: 1rem;cursor:pointer;}
+
+input.range {
+    margin: 0px 0 0 0.8rem;
+    position: relative;
+    top: -3px;
+    accent-color: #2a2d2c;
+    height: 4px;
+}
+
+.time {font-size: 13px;font-weight: 500;}
+
+
+</style>
+</head>
+
+<div class="wraper">
+   <div class="wraper-play">
+      <img id="play" src="./play-button.png" />
+	  <img id="pause" src="./pause-button.png" />
+        <div class="progress-details ml-2">
+		  <div class="progress-wraper">
+		    <div class="activeTimmer"></div>
+		  </div>
+          <div class="time"></div>  
+          <i class="fa fa-volume-up" aria-hidden="true"></i><input type="range" class="range" min="0" max="1" step="0.1" />
+			<span class="repeat-wrap">
+			<i class="fa fa-repeat" title="Repeat" aria-hidden="true"></i><span data-bs-toggle="tooltip" data-bs-title="Default tooltip" class="loop">ON</span>
+			</span>			
+        </div>
+   </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+<script src="./custom.js"></script>
+<body>
+</html>
